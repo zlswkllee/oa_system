@@ -62,11 +62,22 @@
             </div>
             <div class="form-group">
                 <label class="radio-inline col-sm-6 control-label">
-                    <input type="radio" name="status" id="inlineRadio1" value="0"> 学生
+                    <input type="radio" name="statu" id="inlineRadio1" value="0"> 学生
                 </label>
                 <label class="radio-inline">
-                    <input type="radio" name="status" id="inlineRadio2" value="1"> 讲师
+                    <input type="radio" name="statu" id="inlineRadio2" value="1"> 讲师
                 </label>
+                <label class="radio-inline">
+                    <input type="radio" name="statu" id="inlineRadio3" value="2"> 班主任
+                </label>
+
+                <label class="radio-inline">
+                    <input type="radio" name="statu" id="inlineRadio4" value="3"> 校长
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="statu" id="inlineRadio5" value="4"> 超级管理员
+                </label>
+
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-4 col-sm-4">
