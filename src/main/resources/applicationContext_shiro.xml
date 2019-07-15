@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="com.qf.realm.UserRealm" id="userRealm"></bean>
+    <bean class="org.apache.shiro.web.mgt.DefaultWebSecurityManager" id="securityManager">
+        <property name="realm" ref="userRealm"></property>
+    </bean>
+
+    <bean class="org.apache.shiro.spring.web.ShiroFilterFactoryBean" id="shiroFilter">
+        <property name="loginUrl" value="/admin/jump"></property>
+        <property name="successUrl" value="/admin/list"></property>
+        <property name="unauthorizedUrl" value="/admin/unauthorize"></property>
+        <property name="securityManager" ref="securityManager"></property>
+        <!--配置过滤器链，将不同的验证使用不同的过滤器，由工厂bean创建-->
+        <property name="filterChainDefinitions" >
+            <!--anon过滤器表示不做验证过滤
+                authc过滤器表示访问时需进行登录验证的过滤
+                perms过滤器表示访问时需要进行权限验证的过滤
+            -->
+
+            <value>
+                /admin/jump=anon
+                /admin/login=anon
+                /addLeave=perms[user:add]
+                /**=authc
+            </value>
+        </property>
+    </bean>
+
+
+
+
+
+
+
+</beans>
