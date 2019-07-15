@@ -11,7 +11,7 @@
 
 
 
-    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <!--<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource" />
     </bean>
 
@@ -20,9 +20,9 @@
             <tx:method name="find*" isolation="DEFAULT" propagation="REQUIRED" read-only="true"/>
             <tx:method name="*" propagation="SUPPORTS" read-only="false"></tx:method>
         </tx:attributes>
-    </tx:advice>
+    </tx:advice>-->
 
-    <aop:config>
+    <!--<aop:config>
         <aop:pointcut id="pc" expression="execution(* com..service.*.*(..))"/>
         <aop:advisor advice-ref="transactionInterceptor" pointcut-ref="pc"></aop:advisor>
         <aop:aspect ref="logAdvice">
@@ -31,7 +31,7 @@
             <aop:after-throwing method="afterException" pointcut-ref="pc" throwing="throwable"/>
         </aop:aspect>
 
-    </aop:config>
+    </aop:config>-->
 
     
 </beans>
