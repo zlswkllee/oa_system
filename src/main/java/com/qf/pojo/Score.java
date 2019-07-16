@@ -4,9 +4,9 @@ public class Score {
     private int scid;
     private int grade;
     private int stage;
-    private int cid;
-    private int clid;
-    private int sid;
+    private Course course;
+    private Clbum clbum;
+    private Student student;
 
     public int getScid() {
         return scid;
@@ -32,28 +32,29 @@ public class Score {
         this.stage = stage;
     }
 
-    public int getCid() {
-        return cid;
+
+    public Course getCourse() {
+        return course;
     }
 
-    public void setCid(int cid) {
-        this.cid = cid;
+    public void setCourse(Course course) {
+        this.course = course;
     }
 
-    public int getClid() {
-        return clid;
+    public Clbum getClbum() {
+        return clbum;
     }
 
-    public void setClid(int clid) {
-        this.clid = clid;
+    public void setClbum(Clbum clbum) {
+        this.clbum = clbum;
     }
 
-    public int getSid() {
-        return sid;
+    public Student getStudent() {
+        return student;
     }
 
-    public void setSid(int sid) {
-        this.sid = sid;
+    public void setStudent(Student student) {
+        this.student = student;
     }
 
     @Override
@@ -62,9 +63,9 @@ public class Score {
                 "scid=" + scid +
                 ", grade=" + grade +
                 ", stage=" + stage +
-                ", cid=" + cid +
-                ", clid=" + clid +
-                ", sid=" + sid +
+                ", course=" + course +
+                ", clbum=" + clbum +
+                ", student=" + student +
                 '}';
     }
 }

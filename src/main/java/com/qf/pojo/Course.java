@@ -3,7 +3,7 @@ package com.qf.pojo;
 public class Course {
     private int cid;
     private String cname;
-    private int tid;
+    private Teacher teacher;
 
     public int getCid() {
         return cid;
@@ -21,12 +21,13 @@ public class Course {
         this.cname = cname;
     }
 
-    public int getTid() {
-        return tid;
+
+    public Teacher getTeacher() {
+        return teacher;
     }
 
-    public void setTid(int tid) {
-        this.tid = tid;
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
     }
 
     @Override
@@ -34,7 +35,7 @@ public class Course {
         return "Course{" +
                 "cid=" + cid +
                 ", cname='" + cname + '\'' +
-                ", tid=" + tid +
+                ", teacher=" + teacher +
                 '}';
     }
 }

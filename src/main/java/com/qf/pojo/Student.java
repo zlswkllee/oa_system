@@ -10,8 +10,8 @@ public class Student {
     private int age;
     private Date sdate;
     private String sex;
-    private int cid;
-    private int clid;
+    private Course course;
+    private Clbum clbum;
     private String rolename;
 
     public int getSid() {
@@ -70,20 +70,21 @@ public class Student {
         this.sex = sex;
     }
 
-    public int getCid() {
-        return cid;
+
+    public Course getCourse() {
+        return course;
     }
 
-    public void setCid(int cid) {
-        this.cid = cid;
+    public void setCourse(Course course) {
+        this.course = course;
     }
 
-    public int getClid() {
-        return clid;
+    public Clbum getClbum() {
+        return clbum;
     }
 
-    public void setClid(int clid) {
-        this.clid = clid;
+    public void setClbum(Clbum clbum) {
+        this.clbum = clbum;
     }
 
     public String getRolename() {
@@ -93,6 +94,7 @@ public class Student {
     public void setRolename(String rolename) {
         this.rolename = rolename;
     }
+
 
     @Override
     public String toString() {
@@ -104,8 +106,8 @@ public class Student {
                 ", age=" + age +
                 ", sdate=" + sdate +
                 ", sex='" + sex + '\'' +
-                ", cid=" + cid +
-                ", clid=" + clid +
+                ", course=" + course +
+                ", clbum=" + clbum +
                 ", rolename='" + rolename + '\'' +
                 '}';
     }

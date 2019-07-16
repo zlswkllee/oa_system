@@ -3,8 +3,8 @@ package com.qf.pojo;
 public class Clbum {
     private int clid;
     private String clname;
-    private int aid;
-    private int tid;
+    private Adviser adviser;
+    private Teacher teacher;
 
     public int getClid() {
         return clid;
@@ -22,20 +22,21 @@ public class Clbum {
         this.clname = clname;
     }
 
-    public int getAid() {
-        return aid;
+
+    public Adviser getAdviser() {
+        return adviser;
     }
 
-    public void setAid(int aid) {
-        this.aid = aid;
+    public void setAdviser(Adviser adviser) {
+        this.adviser = adviser;
     }
 
-    public int getTid() {
-        return tid;
+    public Teacher getTeacher() {
+        return teacher;
     }
 
-    public void setTid(int tid) {
-        this.tid = tid;
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
     }
 
     @Override
@@ -43,8 +44,8 @@ public class Clbum {
         return "Clbum{" +
                 "clid=" + clid +
                 ", clname='" + clname + '\'' +
-                ", aid=" + aid +
-                ", tid=" + tid +
+                ", adviser=" + adviser +
+                ", teacher=" + teacher +
                 '}';
     }
 }

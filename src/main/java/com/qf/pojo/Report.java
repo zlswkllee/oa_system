@@ -9,7 +9,7 @@ public class Report {
     private Date redate;
     private int grade;
     private int state;
-    private int sid;
+    private Student student;
 
     public int getRid() {
         return rid;
@@ -59,12 +59,13 @@ public class Report {
         this.state = state;
     }
 
-    public int getSid() {
-        return sid;
+
+    public Student getStudent() {
+        return student;
     }
 
-    public void setSid(int sid) {
-        this.sid = sid;
+    public void setStudent(Student student) {
+        this.student = student;
     }
 
     @Override
@@ -76,7 +77,7 @@ public class Report {
                 ", redate=" + redate +
                 ", grade=" + grade +
                 ", state=" + state +
-                ", sid=" + sid +
+                ", student=" + student +
                 '}';
     }
 }
