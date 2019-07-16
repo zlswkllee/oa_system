@@ -22,9 +22,9 @@
             -->
 
             <value>
-                /admin/jump=anon
-                /admin/login=anon
-                /addLeave=perms[user:add]
+                /js/**=anon
+                /css/**=anon
+                /image/**=anon
                 /**=authc
             </value>
         </property>
