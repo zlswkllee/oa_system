@@ -11,6 +11,7 @@ public class Report {
     private int state;
     private Student student;
 
+
     public int getRid() {
         return rid;
     }

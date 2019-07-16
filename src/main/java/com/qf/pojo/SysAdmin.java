@@ -37,6 +37,7 @@ public class SysAdmin {
 
     public void setPassword(String password) {
         this.password = password;
+
     }
 
     public String getRolename() {

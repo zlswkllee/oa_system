@@ -7,6 +7,7 @@ public class Leader {
     private String password;
     private String rolename;
 
+
     public int getLid() {
         return lid;
     }

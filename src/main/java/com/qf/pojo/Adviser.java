@@ -7,6 +7,7 @@ public class Adviser {
     private String password;
     private String rolename;
 
+
     public int getAid() {
         return aid;
     }

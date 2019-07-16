@@ -4,6 +4,7 @@ public class Role {
     private int rid;
     private String rolename;
 
+
     public int getRid() {
         return rid;
     }

@@ -6,6 +6,7 @@ public class Clbum {
     private Adviser adviser;
     private Teacher teacher;
 
+
     public int getClid() {
         return clid;
     }

@@ -68,4 +68,6 @@ public class Score {
                 ", student=" + student +
                 '}';
     }
+
 }
+

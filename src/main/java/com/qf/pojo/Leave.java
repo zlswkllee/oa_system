@@ -10,6 +10,7 @@ public class Leave {
     private int state;
     private int uid;
 
+
     public int getLeid() {
         return leid;
     }

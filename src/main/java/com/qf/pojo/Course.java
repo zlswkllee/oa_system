@@ -5,6 +5,7 @@ public class Course {
     private String cname;
     private Teacher teacher;
 
+
     public int getCid() {
         return cid;
     }
