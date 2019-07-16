@@ -53,7 +53,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="login.jsp"> 
+				<a href="../WEB-INF/jsp/login.jsp">
 					<span class="glyphicon glyphicon-off"></span>注销
 				</a>
 			</li>
@@ -120,33 +120,65 @@
 					</ul>
 				</li>
 				<li class="panel">
-					<a href="#sub3" data-toggle="collapse" data-parent="#myPanel"> 商品管理
+					<a href="#sub3" data-toggle="collapse" data-parent="#myPanel"> 超级管理
 						<span class="glyphicon glyphicon-triangle-bottom pull-right"></span>
 					</a>
 					<ul id="sub3" class="nav panel-collapse collapse">
 						<li>
-							<a href="../GoodsServlet" id="showGoods" > 
-								<span class="glyphicon glyphicon-record"></span>&nbsp;&nbsp;查看商品
+							<a href="../GoodsServlet" id="coursemanage" >
+								<span class="glyphicon glyphicon-record"></span>&nbsp;&nbsp;课程管理
 							</a>
 						</li>
 						<li>
-							<a href="../addGoodsServlet" id="addGoods"> 
-								<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;添加商品
+							<a href="../addGoodsServlet" id="rolemanage">
+								<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;角色管理
+							</a>
+						</li>
+						<li>
+							<a href="../addGoodsServlet" id="usermanage">
+								<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;用户管理
+							</a>
+						</li>
+						<li>
+							<a href="../addGoodsServlet" id="permmanage">
+								<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;权限管理
+							</a>
+						</li>
+						<li>
+							<a href="../addGoodsServlet" id="emplmanage">
+								<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;员工管理
+							</a>
+						</li>
+						<li>
+							<a href="../addGoodsServlet" id="classmanage">
+								<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;班级管理
 							</a>
 						</li>
 					</ul>
 				</li>
 				<li class="panel">
-					<a href="#sub4" data-toggle="collapse" data-parent="#myPanel"> 订单管理
+					<a href="#sub4" data-toggle="collapse" data-parent="#myPanel"> 学生管理
 						<span class="glyphicon glyphicon-triangle-bottom pull-right"></span>
 					</a>
 					<ul id="sub4" class="nav panel-collapse collapse">
 						<li>
 							<a href="#" id="showOrder"> 
-								<span class="glyphicon glyphicon-record"></span>&nbsp;&nbsp;查看订单
+								<span class="glyphicon glyphicon-record"></span>&nbsp;&nbsp;学生管理
 							</a>
 						</li>
+						<li>
+							<a href="#" id="addsocre">
+								<span class="glyphicon glyphicon-record"></span>&nbsp;&nbsp;成绩录入
+							</a>
+						</li>
+						<li>
+							<a href="#" id="analyzescore">
+								<span class="glyphicon glyphicon-record"></span>&nbsp;&nbsp;成绩分析
+							</a>
+						</li>
+
 					</ul>
+
 				</li>
 			</ul>
 		</div>
