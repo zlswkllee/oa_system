@@ -25,9 +25,13 @@
 			var rid = $(this).attr("id");
 			$.post("/deleteRole",{rid:rid},function(d){
 
-				alert(data);
-				$("#tr"+rid).remove();
-			},"text");
+				alert(d[0]);
+				var i = d[1]
+				if(i > 0){
+					$("#tr"+rid).remove();
+				}
+
+			},"json");
 		});
 	});
 
