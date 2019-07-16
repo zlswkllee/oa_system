@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -48,12 +49,20 @@ public class RoleController {
     }
     @ResponseBody
     @RequestMapping("/deleteRole")
-    public String deleteRole(int rid){
+    public List<String> deleteRole(int rid){
         int i = roleService.checkDeleteRole(rid);
-        if(i == 0)
-            return "该角色关联用户，不能删除";
-        else
-            return "删除成功";
+        List<String> list = new ArrayList<>();
+
+        if(i == 0){
+            list.add("该角色关联用户，不能删除");
+            list.add("0");
+        }else {
+            list.add("删除成功");
+            list.add("1");
+        }
+        return list;
+
+
     }
 
 
