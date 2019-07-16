@@ -9,9 +9,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <script src="../js/jquery.min.js"></script>
-        <script src="../js/bootstrap.min.js"></script>
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
         <title>后台主页面</title>
         <style>
             @media ( min-width :768px ) {
@@ -53,7 +53,7 @@
                 </a>
             </li>
             <li>
-                <a href="../WEB-INF/jsp/login.jsp">
+                <a href="/jump">
                     <span class="glyphicon glyphicon-off"></span>注销
                 </a>
             </li>
@@ -130,7 +130,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="../addGoodsServlet" id="rolemanage">
+                            <a href="/selectRole" id="rolemanage">
                                 <span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;角色管理
                             </a>
                         </li>

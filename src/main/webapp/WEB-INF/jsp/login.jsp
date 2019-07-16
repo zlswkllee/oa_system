@@ -20,11 +20,13 @@
         $(function(){
             $("#ff").validate({
                 rules:{
-                    username:"required"
+                    username:"required",
+                    password:"required"
 
                 },
                 messages:{
-                    username:"必填字段"
+                    username:"必填字段",
+                    password: "请输入密码"
 
                 }
             })
@@ -61,7 +63,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="radio-inline col-sm-4 control-label">
+                <label class="radio-inline col-sm-5 control-label">
                     <input type="radio" name="statu" id="inlineRadio1" value="0"> 学生
                 </label>
                 <label class="radio-inline">

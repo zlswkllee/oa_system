@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.mapper.StuLeaveMapper">
+    <update id="updateLeave" parameterType="int">
+            update stuleave set state=1 where leids =#{leids}
+    </update>
+    <insert id="addLeave" parameterType="stuLeave" keyProperty="lid" useGeneratedKeys="true">
+        insert stuleave(reason,stardate,enddate) value(#{reason},#{stardate},#{enddate})
+    </insert>
+
+    <select id="getLeave" resultType="stuLeave">
+        select * from stuleave where state=0
+    </select>
+
+    <select id="getTeaname" resultType="string" parameterType="string">
+        select tname from student,clbum,teacher where student.clid=clbum.clid and
+        clbum.tid=teacher.tid and student.username=#{username}
+    </select>
+
+
+    <select id="getSname" parameterType="string" resultType="string">
+        select sname from student where username=#{username}
+    </select>
+</mapper>

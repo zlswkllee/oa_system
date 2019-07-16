@@ -2,21 +2,21 @@ package com.qf.pojo;
 
 import java.util.Date;
 
-public class Leave {
-    private int leid;
+public class AdLeave {
+
+    private int leida;
     private String reason;
     private Date stardate;
     private Date enddate;
     private int state;
-    private int uid;
+    private int aid;
 
-
-    public int getLeid() {
-        return leid;
+    public int getLeida() {
+        return leida;
     }
 
-    public void setLeid(int leid) {
-        this.leid = leid;
+    public void setLeida(int leida) {
+        this.leida = leida;
     }
 
     public String getReason() {
@@ -51,23 +51,23 @@ public class Leave {
         this.state = state;
     }
 
-    public int getUid() {
-        return uid;
+    public int getAid() {
+        return aid;
     }
 
-    public void setUid(int uid) {
-        this.uid = uid;
+    public void setAid(int aid) {
+        this.aid = aid;
     }
 
     @Override
     public String toString() {
-        return "Leave{" +
-                "leid=" + leid +
+        return "AdLeave{" +
+                "leida=" + leida +
                 ", reason='" + reason + '\'' +
                 ", stardate=" + stardate +
                 ", enddate=" + enddate +
                 ", state=" + state +
-                ", uid=" + uid +
+                ", aid=" + aid +
                 '}';
     }
 }

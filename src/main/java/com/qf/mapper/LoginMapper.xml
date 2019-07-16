@@ -24,4 +24,30 @@
     </select>
 
 
+    <select id="getSid" parameterType="string" resultType="int">
+            select sid from student where username=#{username}
+
+    </select>
+
+    <select id="getTid" parameterType="string" resultType="int">
+            select tid from teacher where username=#{username}
+
+    </select>
+
+    <select id="getAid" parameterType="string" resultType="int">
+            select aid from adviser where username=#{username}
+
+    </select>
+
+    <select id="getLid" parameterType="string" resultType="int">
+            select lid from leader where username=#{username}
+
+    </select>
+
+    <select id="getYid" parameterType="string" resultType="int">
+            select yid from sys_admin where username=#{username}
+
+    </select>
+
+
 </mapper>

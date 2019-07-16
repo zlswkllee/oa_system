@@ -33,4 +33,30 @@ public class LoginServiceImpl implements LoginService {
 
         return password;
     }
+
+    @Override
+    public int getSid(String username) {
+
+        return loginMapper.getSid(username);
+    }
+
+    @Override
+    public int getTid(String username) {
+        return loginMapper.getTid(username);
+    }
+
+    @Override
+    public int getAid(String username) {
+        return loginMapper.getAid(username);
+    }
+
+    @Override
+    public int getLid(String username) {
+        return loginMapper.getLid(username);
+    }
+
+    @Override
+    public int getYid(String username) {
+        return loginMapper.getYid(username);
+    }
 }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.mapper.RoleMapper">
+    <insert id="insertRole" parameterType="role"  useGeneratedKeys="true" keyProperty="rid">
+        insert into role(rolename) values(#{rolename})
+    </insert>
+    <select id="selectAllRole" resultType="role">
+        select * from role
+    </select>
+    <update id="updateRole" parameterType="role">
+        update role set rolename=#{rolename} where rid=#{rid}
+    </update>
+    <select id="selectUserRole" parameterType="int" resultType="role">
+        select role.rid,role.rolename from role,user_role where role.rid=user_role.rid and role.rid=#{rid}
+    </select>
+    <delete id="deleteRole" parameterType="int">
+        delete from role where rid=#{rid}
+    </delete>
+    <select id="getRoleById" parameterType="int" resultType="role">
+        select * from role where rid=#{rid}
+    </select>
+
+</mapper>

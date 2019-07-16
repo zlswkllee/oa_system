@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.mapper.AdLeaveMapper">
+    <update id="updateLeave" parameterType="int">
+            update adleave set state=1 where leida =#{leida}
+    </update>
+    <insert id="addLeave" parameterType="adLeave" keyProperty="lid" useGeneratedKeys="true">
+        insert adleave(reason,stardate,enddate) value(#{reason},#{stardate},#{enddate})
+
+    </insert>
+
+    <select id="getLeave" resultType="adLeave">
+        select * from adleave where state=0
+    </select>
+
+    <select id="getLname" resultType="string" parameterType="string">
+        select lname from leader;
+    </select>
+
+    <select id="getAname" resultType="string" parameterType="string">
+        select aname from adviser where username=#{username}
+    </select>
+</mapper>
