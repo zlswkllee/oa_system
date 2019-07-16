@@ -27,6 +27,7 @@ public class LoginRealm extends AuthorizingRealm {
         SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(split[0], password, "LoginRealm");
 
 
+
         return simpleAuthenticationInfo;
     }
 }
