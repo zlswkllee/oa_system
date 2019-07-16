@@ -6,7 +6,15 @@ public class Adviser {
     private String username;
     private String password;
     private String rolename;
+    private String password_salt;
 
+    public String getPassword_salt() {
+        return password_salt;
+    }
+
+    public void setPassword_salt(String password_salt) {
+        this.password_salt = password_salt;
+    }
 
     public int getAid() {
         return aid;
@@ -56,6 +64,7 @@ public class Adviser {
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", rolename='" + rolename + '\'' +
+                ", password_salt='" + password_salt + '\'' +
                 '}';
     }
 }

@@ -24,6 +24,7 @@ public class LoginRealm extends AuthorizingRealm {
         String principal = (String) authenticationToken.getPrincipal();
         String[] split = principal.split(":");
         String password = loginService.getPassword(principal);
+
         SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(split[0], password, "LoginRealm");
 
         return simpleAuthenticationInfo;

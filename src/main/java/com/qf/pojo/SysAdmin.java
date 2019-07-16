@@ -6,6 +6,15 @@ public class SysAdmin {
     private String username;
     private String password;
     private String rolename;
+    private String password_salt;
+
+    public String getPassword_salt() {
+        return password_salt;
+    }
+
+    public void setPassword_salt(String password_salt) {
+        this.password_salt = password_salt;
+    }
 
     public int getYid() {
         return yid;
@@ -56,6 +65,7 @@ public class SysAdmin {
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", rolename='" + rolename + '\'' +
+                ", password_salt='" + password_salt + '\'' +
                 '}';
     }
 }

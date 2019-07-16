@@ -4,15 +4,15 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean class="com.qf.realm.UserRealm" id="userRealm"></bean>
+    <bean class="com.qf.realm.LoginRealm" id="loginRealm"></bean>
     <bean class="org.apache.shiro.web.mgt.DefaultWebSecurityManager" id="securityManager">
-        <property name="realm" ref="userRealm"></property>
+        <property name="realm" ref="loginRealm"></property>
     </bean>
 
     <bean class="org.apache.shiro.spring.web.ShiroFilterFactoryBean" id="shiroFilter">
-        <property name="loginUrl" value="/admin/jump"></property>
-        <property name="successUrl" value="/admin/list"></property>
-        <property name="unauthorizedUrl" value="/admin/unauthorize"></property>
+        <property name="loginUrl" value="/jump"></property>
+        <property name="successUrl" value="/list"></property>
+        <property name="unauthorizedUrl" value="/unauthorize"></property>
         <property name="securityManager" ref="securityManager"></property>
         <!--配置过滤器链，将不同的验证使用不同的过滤器，由工厂bean创建-->
         <property name="filterChainDefinitions" >
@@ -21,6 +21,8 @@
                 perms过滤器表示访问时需要进行权限验证的过滤
             -->
             <value>
+                /jump=anon
+                /login=anon
                 /js/**=anon
                 /css/**=anon
                 /image/**=anon

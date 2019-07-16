@@ -43,7 +43,7 @@
         </div>
     </div>
     <div class="panel-body">
-        <form action="/user/loginR" method="post" id="ff" class="form-horizontal">
+        <form action="/login" method="post" id="ff" class="form-horizontal">
             <div class="form-group">
                 <label class="col-sm-4 control-label" for="username">
                     用户名：
@@ -61,7 +61,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="radio-inline col-sm-6 control-label">
+                <label class="radio-inline col-sm-4 control-label">
                     <input type="radio" name="statu" id="inlineRadio1" value="0"> 学生
                 </label>
                 <label class="radio-inline">

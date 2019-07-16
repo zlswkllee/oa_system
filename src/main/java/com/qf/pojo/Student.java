@@ -13,7 +13,15 @@ public class Student {
     private Course course;
     private Clbum clbum;
     private String rolename;
+    private String password_salt;
 
+    public String getPassword_salt() {
+        return password_salt;
+    }
+
+    public void setPassword_salt(String password_salt) {
+        this.password_salt = password_salt;
+    }
 
     public int getSid() {
         return sid;
@@ -110,6 +118,7 @@ public class Student {
                 ", course=" + course +
                 ", clbum=" + clbum +
                 ", rolename='" + rolename + '\'' +
+                ", password_salt='" + password_salt + '\'' +
                 '}';
     }
 }
