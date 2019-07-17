@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qf.mapper.LeaveMapper">
+
+     <insert id="addLeave" parameterType="leave" useGeneratedKeys="true" keyProperty="leid">
+         insert into uleave(reason,stardate,enddate,username,name) values(#{reason},#{starDate},#{endDate},#{username},#{name})
+     </insert>
+
+    <update id="updateLeave" parameterType="int" >
+        update uleave set state=1 where leid=#{leid}
+    </update>
+
+    <select id="getTusername" parameterType="string" resultType="string">
+        select teacher.username from uleave,student,clbum,teacher where uleave.username=student.username and
+        student.clid=clbum.clid and clbum.tid=teacher.tid and uleave.username=#{username}
+
+    </select>
+
+    <select id="getLusername" resultType="string">
+        select username from leader where lid=1
+    </select>
+
+    <select id="getSname" resultType="string" parameterType="string">
+
+        select sname from student where username=#{username}
+    </select>
+
+    <select id="getTname" resultType="string" parameterType="string">
+        select tname from teacher where username=#{username}
+    </select>
+
+
+    <select id="getAname" resultType="string" parameterType="string">
+        select aname from adviser where username=#{username}
+    </select>
+
+    <select id="getAusername" parameterType="string" resultType="string">
+        select adviser.username from adviser,uleave,student,clbum where uleave.username=student.username
+        and student.clid=clbum.clid and clbum.aid =adviser.aid and uleave.username=#{username}
+    </select>
+    
+    
+
+
+    
+    <select id="getLeave" resultType="leave">
+        select uleave.leid,uleave.stardate,uleave.enddate,uleave.name,uleave.reason from uleave where leid in
+        <foreach collection="list" item="value" separator="," open="(" close=")">
+            #{value}
+        </foreach>
+    </select>
+
+
+</mapper>

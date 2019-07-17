@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.mapper.ScoreMapper">
+
+    <resultMap id="scoreMap" type="score">
+        <id column="scid" property="scid"></id>
+        <result column="grade" property="grade"></result>
+        <result column="stage" property="stage"></result>
+        <association property="sid" javaType="student"  column="sid">
+            <id column="sid" property="sid"></id>
+            <result column="sname" property="sname"></result>
+        </association>
+    </resultMap>
+
+    <select id="getScore" parameterType="int" resultMap="scoreMap">
+        select score.scid,score.grade,score.stage,score.sid,student.sname from score,student where score.sid=student.sid
+        and stage=#{stage} and clid=#{clid}
+
+    </select>
+
+</mapper>
