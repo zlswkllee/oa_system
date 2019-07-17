@@ -53,7 +53,7 @@
                 </a>
             </li>
             <li>
-                <a href="/jump">
+                <a href="/jump/login">
                     <span class="glyphicon glyphicon-off"></span>注销
                 </a>
             </li>
@@ -86,12 +86,12 @@
                     </a>
                     <ul id="sub1" class="nav collapse panel-collapse">
                         <li>
-                            <a href="#" id="addleave">
+                            <a href="/jump/addLeave" id="addleave">
                                 <span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;<b>请假申请</b>
                             </a>
                         </li>
                         <li>
-                            <a href="#" id="dealleave">
+                            <a href="/leaveList" id="dealleave">
                                 <span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;<b>请假审批</b>
                             </a>
                         </li>
@@ -140,7 +140,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="../addGoodsServlet" id="permmanage">
+                            <a href="/showList" id="permmanage">
                                 <span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;权限管理
                             </a>
                         </li>
