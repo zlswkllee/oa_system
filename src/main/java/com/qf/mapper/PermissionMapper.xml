@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.mapper.PermissionMapper">
+    <insert id="addUserRole" parameterType="userRole" useGeneratedKeys="true" keyProperty="urid">
+        insert into user_role (uid,rid,flag) values (#{uid},#{rid},#{flag})
+    </insert>
+    <delete id="deleteRole" parameterType="userRole">
+        delete from user_role where uid=#{uid} and rid=#{rid} and flag=#{flag}
+    </delete>
+
+    <resultMap id="stu" type="studentRole">
+        <id column="urid" property="urid"></id>
+        <result column="flag" property="flag"></result>
+        <association property="student" column="sid" javaType="student">
+            <id column="sid" property="sid"></id>
+            <result column="username" property="username"></result>
+            <result column="sname" property="sname"></result>
+        </association>
+        <!--<collection property="roleList" column="username" ofType="role" select="com.qf.mapper.AuthoMapper.getRolesStudent"/>-->
+
+    </resultMap>
+    <select id="getRolesStudent" resultMap="stu">
+        select * from (select username,urid,sname,student.sid,flag from user_role,student
+        where user_role.uid=student.sid and flag=1 order by urid desc) t group by t.username
+    </select>
+   <!-- //老师-->
+    <resultMap id="tea" type="teacherRole">
+        <id column="urid" property="urid"></id>
+        <result column="flag" property="flag"></result>
+        <association property="teacher" column="tid" javaType="teacher">
+        <id column="tid" property="tid"></id>
+        <result column="username" property="username"></result>
+        <result column="tname" property="tname"></result>
+    </association>
+    </resultMap>
+    <select id="getRolesTeacher" resultMap="tea">
+        select * from (select username,urid,tname,teacher.tid,flag from user_role,teacher
+        where user_role.uid=teacher.tid and flag=2 order by urid desc) a group by a.username
+    </select>
+    <!-- 班主任-->
+    <resultMap id="adv" type="adviserRole">
+        <id column="urid" property="urid"></id>
+        <result column="flag" property="flag"></result>
+        <association property="adviser" column="aid" javaType="adviser">
+            <id column="aid" property="aid"></id>
+            <result column="username" property="username"></result>
+            <result column="aname" property="aname"></result>
+        </association>
+    </resultMap>
+    <select id="getRolesAdvisor" resultMap="adv">
+        select * from (select username,urid,aname,adviser.aid,flag from user_role,adviser
+        where user_role.uid=adviser.aid and flag=3 order by urid desc) b group by b.username
+    </select>
+    <!-- 校长-->
+    <resultMap id="lea" type="leaderRole">
+        <id column="urid" property="urid"></id>
+        <result column="flag" property="flag"></result>
+        <association property="leader" column="lid" javaType="leader">
+            <id column="lid" property="lid"></id>
+            <result column="username" property="username"></result>
+            <result column="lname" property="lname"></result>
+        </association>
+    </resultMap>
+    <select id="getRolesLeader" resultMap="lea">
+        select * from (select username,urid,lname,leader.lid,flag from user_role,leader
+        where user_role.uid=leader.lid and flag=4 order by urid desc) c group by c.username
+    </select>
+
+</mapper>

@@ -5,23 +5,23 @@
 <mapper namespace="com.qf.mapper.AuthoMapper">
     <select id="getRolesStudent" parameterType="String" resultType="role">
         select role.rid,role.rolename from role,student,user_role where role.rid=user_role.rid
-        and student.sid = user_role.uid and user_role.flag=1
+        and student.sid = user_role.uid and user_role.flag=1 and username=#{username}
     </select>
     <select id="getRolesTeacher" parameterType="String" resultType="role">
         select role.rid,role.rolename from role,teacher,user_role where role.rid=user_role.rid
-        and teacher.tid = user_role.uid and user_role.flag=2
+        and teacher.tid = user_role.uid and user_role.flag=2 and username=#{username}
     </select>
     <select id="getRolesAdvisor" parameterType="String" resultType="role">
         select role.rid,role.rolename from role,adviser,user_role where role.rid=user_role.rid
-        and adviser.aid = user_role.uid and user_role.flag=3
+        and adviser.aid = user_role.uid and user_role.flag=3 and username=#{username}
     </select>
     <select id="getRolesLeader" parameterType="String" resultType="role">
         select role.rid,role.rolename from role,leader,user_role where role.rid=user_role.rid
-        and leader.lid = user_role.uid and user_role.flag=4
+        and leader.lid = user_role.uid and user_role.flag=4 and username=#{username}
     </select>
     <select id="getRolesSysadmin" parameterType="String" resultType="role">
         select role.rid,role.rolename from role,sys_admin,user_role where role.rid=user_role.rid
-        and sys_admin.yid = user_role.uid and user_role.flag=5
+        and sys_admin.yid = user_role.uid and user_role.flag=5 and username=#{username}
     </select>
     <select id="getPermission" parameterType="string" resultType="string">
         select permission from role,permissions,role_permission where role.rid=role_permission.rid and permissions.pid=role_permission.pid and role.rid in
