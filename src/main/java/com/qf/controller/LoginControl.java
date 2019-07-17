@@ -22,10 +22,7 @@ public class LoginControl {
     @Autowired
     private SecurityManager securityManager;
 
-    @RequestMapping("jump")
-    public String jump(){
-        return "login";
-    }
+
 
     @RequestMapping("login")
     public String login(String username, String password, String statu, HttpSession session){
@@ -41,7 +38,9 @@ public class LoginControl {
             subject.login(usernamePasswordToken);
             if(subject.isAuthenticated()){
                 //登陆成功
+
                 session.setAttribute("flag",statu);
+                session.setAttribute("username",username);
                 int i = Integer.parseInt(statu);
 
                 switch (i){
@@ -49,6 +48,7 @@ public class LoginControl {
                         Student student = new Student();
                         student.setUsername(username);
                         session.setAttribute("user",student);
+
                         break;
                     case 1:
                         Teacher teacher = new Teacher();
