@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.mapper.UserManageMapper">
+    <update id="updateStuPassword" parameterType="student">
+        update student set password=#{password} where sid=#{sid}
+    </update>
+    <update id="updateTeaPassword" parameterType="teacher">
+        update teacher set password=#{password} where tid=#{tid}
+    </update>
+    <update id="updateAdvPassword" parameterType="adviser">
+        update adviser set password=#{password} where aid=#{aid}
+    </update>
+    <update id="updateLeaPassword" parameterType="leader">
+        update leader set password=#{password} where lid=#{lid}
+    </update>
+    <delete id="deleteStu" parameterType="student">
+        delete from student where sid=#{sid}
+    </delete>
+    <delete id="deleteTea" parameterType="teacher">
+        delete from teacher where tid=#{tid}
+    </delete>
+    <delete id="deleteAdv" parameterType="adviser">
+        delete from adviser where aid=#{aid}
+    </delete>
+    <delete id="deleteLea" parameterType="leader">
+        delete from leader where lid=#{lid}
+    </delete>
+    <select id="getStu" parameterType="string" resultType="student">
+        select * from student where locate(#{username},username)>0
+    </select>
+    <select id="getTea" parameterType="string" resultType="teacher">
+        select * from teacher where locate(#{username},username)>0
+    </select>
+    <select id="getAdv" parameterType="string" resultType="adviser">
+        select * from adviser where locate(#{username},username)>0
+    </select>
+    <select id="getLea" parameterType="string" resultType="leader">
+        select * from leader where locate(#{username},username)>0
+    </select>
+    <select id="getStuList" resultType="student">
+        select * from student
+    </select>
+    <select id="getTeaList" resultType="teacher">
+        select * from teacher
+    </select>
+    <select id="getAdvList" resultType="adviser">
+        select * from adviser
+    </select>
+    <select id="getLeaList" resultType="leader">
+        select * from leader
+    </select>
+</mapper>
